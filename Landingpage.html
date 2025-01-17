@@ -4,470 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jhoevan Miles Arnoco</title>
+    <link rel="stylesheet" href="css/Landing.css">
     <link rel="icon" type="image/png" href="images/depositphotos_335935864-stock-illustration-creative-letter-jm-logo-design.jpg">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <style>
-        body {
-            font-family: "Monument Extended";
-            margin: 0;
-            padding: 0;
-            background-color: #0b162c;
-            color: #333;
-        }
-        @keyframes slideInRight {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-body {
-    animation: slideInRight 1s ease-out;
-}
-
-        html{
-    scroll-behavior: smooth;
-}
-        /* Navigation */
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-            background-color: #0b162c;
-            position: sticky; /* Makes the navbar stick at the top */
-    top: 0; /* The navbar will stick to the top of the viewport */
-    z-index: 1000; /* Ensures the navbar stays above other elements */
-        }
-
-        .nav-left {
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #FFEB58;
-            transition: transform 0.3s;
-        }
-
-        .nav-left:hover {
-            transform: translateY(-5px);
-        }
-        .nav-center {
-            display: flex;
-            gap: 15px;
-            margin-left: -35px;
-        }
-
-        .nav-center a {
-            text-decoration: none;
-            color: wheat;
-            font-weight: bold;
-            font-size: 1.2em;
-            margin-left: 30px;
-            transition: transform 0.3s;
-        }
-        .nav-center a:hover {
-            transform: translateY(-5px);
-        }
-        .nav-right {
-            display: flex;
-            gap: 15px;
-        }
-
-        .nav-right img {
-            width: 34px;
-            height:34px;
-            cursor: pointer;
-            transition: transform 0.3s;
-            border-radius: 50px;
-        }
-        .nav-right img:hover {
-            transform: translateY(-5px);
-        }
-        /* Hero Section */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 50px;
-            padding-top: 150px;
-        }
-
-        .hero-text {
-            max-width: 50%;
-            margin-left: 50px;
-        }
-
-        .hero-text h1 {
-            font-size: 4.9em;
-            font-weight: bold;
-            color: #FFEB58;
-            margin: 0;
-            margin-left: -10px;
-        }
-
-        .hero-text h2 {
-            font-size: 1.7em;
-            color: wheat;
-            margin: 10px 0;
-
-        }
-
-        .hero-text p {
-            font-size: 1.4em;
-            color:wheat;
-            margin-top: 10px;
-        }
-
-        .resume-button {
-            background-color: #FFEB58;
-            color: black;
-            padding: 10px 40px;
-            border: none;
-            border-radius: 20px;
-            font-size: 0.9em;
-            cursor: pointer;
-            margin-top: 10px;
-        transition: transform 0.3s;
-        font-family: "Monument Extended";
-        }
-        .resume-button:hover {
-            transform: translateY(-5px);
-        }
-        .hero-image img {
-            border-radius: 50%;
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            border: 5px solid #FFEB58;
-            margin-right: 100px;
-            margin-top: -50px;
-            transition: transform 0.3s;
-        }
-         .hero-image img:hover {
-            transform: translateY(-5px);
-        }
-        .hero-image {
-            position: relative;
-        }
-
-        .hero-image::after {
-            content: "";
-            position: absolute;
-            top: -10px;
-            right: 70px;
-            width: 30px;
-            height: 30px;
-            background-color: #FFEB58;
-            border-radius: 50%;
-        }
-
-        /* About Section */
-        #about {
-            padding: 50px;
-            background-color:#0b162c;
-            padding-top: 100px;
-        }
-
-        #about h2 {
-            font-size: 4.5em;
-            font-weight: bold;
-            color: wheat;
-            margin-bottom: 20px;
-        }
-
-        #about p {
-            font-size: 1.2em;
-            line-height: 1.8em;
-            color:wheat;
-            margin-bottom: 30px;
-            margin-left: 50px;
-        }
-        #experience {
-            padding: 50px;
-            background-color:#0b162c;
-            padding-top: 100px;
-        }
-
-        #experience h2 {
-            font-size: 4.5em;
-            font-weight: bold;
-            color: wheat;
-            margin-bottom: 20px;
-        }
-
-        #experience p {
-            font-size: 1.2em;
-            line-height: 1.8em;
-            color:wheat;
-            margin-bottom: 30px;
-            margin-left: 50px;
-        }
-        #services  {
-            padding: 50px;
-            background-color:#0b162c;
-            padding-top: 100px;
-        }
-
-        #services  h2 {
-            font-size: 4.5em;
-            font-weight: bold;
-            color: wheat;
-            margin-bottom: 20px;
-        }
-
-        #services p {
-            font-size: 1.2em;
-            line-height: 1.8em;
-            color:wheat;
-            margin-bottom: 30px;
-            margin-left: 50px;
-        }
-        #contact {
-            padding: 50px;
-            background-color:#0b162c;
-            padding-top: 100px;
-        }
-
-        #contact h2 {
-            font-size: 4.5em;
-            font-weight: bold;
-            color: wheat;
-            margin-bottom: 20px;
-        }
-
-        #contact p {
-            font-size: 1.2em;
-            line-height: 1.8em;
-            color:wheat;
-            margin-bottom: 30px;
-            margin-left: 50px;
-        }
-
-        #skills {
-            padding: 50px;
-            background-color:#0b162c;
-            padding-top: 100px;
-        }
-
-        #skills h2 {
-            font-size: 4.5em;
-            font-weight: bold;
-            color: wheat;
-            margin-bottom: 20px;
-        }
-
-        #skills p {
-            font-size: 1.2em;
-            line-height: 1.8em;
-            color:wheat;
-            margin-bottom: 30px;
-            margin-left: 50px;
-        }
-
-        .timeline {
-            list-style: none;
-            margin-left: 50px;
-            padding: 0;
-            margin-top: 100px;
-        }
-
-        .timeline li {
-            margin-bottom: 20px;
-            position: relative;
-            color: wheat;
-            padding-left: 60px; /* Space for the image */
-            margin-top: 60px;
-            display: flex;
-            align-items: flex-start; /* Align text with the image */
-        }
-
-        .timeline li img {
-            width: 150px; /* Adjust size as needed */
-            height: 150px;
-            object-fit: cover;
-            margin-right: 50px; /* Space between the image and text */
-            border-radius: 50%; /* Optional: Circular images */
-            transition: transform 0.3s;
-        }
-        .timeline li, img:hover {
-            transform: translateY(-5px);
-        }
-
-        .timeline li::before {
-            display: none; /* Hide the bullet point */
-        }
-
-        .timeline li span {
-            font-weight: bold;
-            color: #FFEB58;
-            font-size: 1.4rem;
-        }
-        .skills-section {
-            padding: 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .skills-section h1 {
-            text-align: center;
-            font-size: 2.9rem;
-            margin-bottom: 20px;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .skill-item {
-            background-color: #162447;
-            padding: 10px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
-
-        .skill-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-item i {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #00d9ff;
-        }
-
-        .skill-item h3 {
-            margin: 10px 0 0;
-            font-size: 1.2rem;
-            color: #FFEB58;
-        }
-        .contact-container {
-  display: flex;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  overflow: hidden;
-  width: 1000px;
-  margin-left: 80px;
-  margin-top: 60px;
-  margin-bottom: 100px;
-  transition: transform 0.3s;
-        }
-
-        .contact-container:hover {
-            transform: translateY(-5px);
-        }
-.contact-info {
-  background-color:#1b263b;
-  color: wheat;
-  padding: 20px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  
-}
-
-.contact-info h2 {
-  margin-bottom: 20px;
-}
-
-.contact-info p {
-  margin: 8px 0;
-  line-height: 1.5;
-  display: flex;
-  align-items: center;
-}
-
-.contact-info p img {
-  margin-right: 10px;
-  width: 20px;
-  height: 20px;
-}
-
-.contact-info a {
-  color: wheat;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  margin: 5px 0;
-}
-
-.contact-info a img {
-  margin-right: 10px;
-  width: 20px;
-  height: 20px;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-.contact-form {
-  background-color:dimgray;
-  padding: 50px;
-  flex-grow: 1;
-  width: 500px;
-}
-
-.contact-form h2 {
-  margin-bottom: 10px;
-}
-
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.contact-form button {
-  background-color: #FFEB58;
-  color: black;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-left: 20px;
-  transition: transform 0.3s;
-        }
-
-        .contact-form button:hover {
-            transform: translateY(-5px);
-        }
-        .skill-item{
-    display: flex;
-    align-items: center; /* Vertically center the text and image */
-    margin-bottom: 15px;
-}
-
-.skill-icon {
-    width: 30px; /* Set the icon/image size */
-    height: 30px;
-    margin-left: 20px;
-    margin-right: 10px; /* Space between the image and the text */
-}
-
-a{
-    text-decoration: none;
-}
     </style>
 </head>
 <body>
@@ -489,7 +31,7 @@ a{
     </nav>
     <section class="hero" id="home">
         <div class="hero-text">
-            <h2>Hello, I’m Miles,</h2>
+            <h2>Hello, I’m Jhoevan,</h2>
             <h1>Virtual Assistant</h1>
             <p>Based in the Philippines.</p>
             <a href="https://drive.google.com/file/d/1Udo_Y3Xne0VsHYmTaTFDLvYsCGz6pw5J/view"><button class="resume-button">Check Resume</button></a>
@@ -500,11 +42,11 @@ a{
     </section>
     <section id="about">
         <h2 style="margin-left: 50px; color: #FFEB58;">About.</h2>
-        <p>Passionate and adaptable professional with 1 year of experience in Data Entry skills. Known for embracing risks and<br> 
-            pursuing new opportunities to advance my career. Committed to accuracy, confidentiality, timeliness, and adaptability.<br> 
-            Dedicated to delivering high-quality work with honesty and integrity.</p>
+        <p>I am a driven and adaptable professional passionate about learning and growing in every opportunity. With 1 year of experience in Data Entry <br>and 5 months as a Virtual Assistant, I bring expertise in Microsoft Office, Google Suite, Pinterest, Instagram, LinkedIn, Shopify, and MailerLite. <br>I thrive on managing tasks with accuracy, confidentiality, and efficiency.
+
+<br><br>When you work with me, you gain a dedicated partner committed to delivering results with integrity, timeliness, and adaptability. <br>Let’s work together to take your projects to the next level!</p>
         <ul class="timeline">
-            <h2 style="margin-left: 50px; color: #FFEB58;font-size: 3.6em; ;">Education.</h2>
+            <h2 style="margin-left: 50px; color: #FFEB58;font-size: 3.6em; margin-top: -50px;">Education.</h2>
             <li>
                 <img src="images/ctu.jpg" alt="Timeline Icon">
                 <div>
@@ -524,7 +66,7 @@ a{
                     <span>City of Bogo Senior High School ( 2020 - 2022 )</span>
                     <br><br>
                     ➮
-City of Bogo Senior High School is a school in Cebu Province, Central Visayas, Davao Region.<br><br> 
+City of Bogo Senior High School is a school in Cebu Province, Central Visayas.<br><br> 
 ➮
 Upper Secondary Education.<br><br>
 ➮
@@ -545,9 +87,9 @@ Cebu, Philippines.
     </section>
     <section id="experience">
         <h2 style="margin-left: 50px; color: #FFEB58;">Experience.</h2>
-        <p> With strong organizational skills, I am a detail-oriented team player capable of handling multiple projects simultaneously<br>  with a high degree of accuracy.</p>
+        <p>1 year of experience in Data Entry and 5 months as a Virtual Assistant.</p>
         <ul class="timeline">
-            <h2 style="margin-left: 50px; color: #FFEB58;font-size: 3.6em; ;">Work Experience.</h2>
+            <h2 style="margin-left: 50px; color: #FFEB58;font-size: 3.6em; ; margin-top: -50px;">Work Experience.</h2>
           
             <li>
                 <img src="images/DNA_Distillery_Logo_2048x2048.png" alt="Timeline Icon" style="border-radius: 10px; margin-top: 70px; height: 100px; width: 230px;">
@@ -593,11 +135,11 @@ Cebu, Philippines.
             <div class="skills-grid">
                 <div class="skill-item">
                     <i class="fas fa-code"></i>
-                    <h3 style="margin-left: 30px;">Mail Delivery Service</h3>
+                    <h3 style="margin-left: 10px;">Cold Outreach Emails Service</h3>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-palette"></i>
-                    <h3 style="margin-left: 20px;">Event Planning Service
+                    <h3 style="margin-left: 20px; margin-bottom: 10px;">Event Planning Service
                     </h3>
                 </div>
                 <div class="skill-item">
@@ -614,7 +156,7 @@ Cebu, Philippines.
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-code-branch"></i>
-                    <h3 style="margin-left: 30px;">Programming Service</h3>
+                    <h3 style="margin-left: 30px; margin-bottom: 10px;">Email Management</h3>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-layer-group"></i>
@@ -629,7 +171,7 @@ Cebu, Philippines.
         </div>
     </section>
     <section id="skills">
-        <h2 style="margin-left: 50px; color: #FFEB58;">Skillset.</h2>
+        <h2 style="margin-left: 50px; color: #FFEB58;">Software Skillset.</h2>
         <p></p>
         <div class="skills-section" style="margin-top: -50px;">
             <div class="skills-grid">
@@ -666,7 +208,10 @@ Cebu, Philippines.
                     <img src="images/pinterest-1-logo-png-transparent.png" alt="Reddit Icon" class="skill-icon" style="height: 40px; width: 40px; margin-left: 30px;"/>
                    <h3  style="margin-top: -1px;">Pinterest</h3>
                 </div>
-                
+                <div class="skill-item" style="padding-bottom: 20px;">
+                    <img src="images/trello-png-trello-png-1600.png.crdownload" alt="Reddit Icon" class="skill-icon" style="height: 40px; width: 40px; margin-left: 30px;margin-top: 15px;"/>
+                   <h3  style="margin-top: 15px;">Trello</h3>
+                </div>
                
             </div>
         </div>
@@ -687,7 +232,7 @@ Cebu, Philippines.
                 </div>
                 <div class="skill-item" style="padding-bottom: 25px;">
                     <img src="images/phone.png" alt="Phone Icon" class="skill-icon" style="margin-left: 20px; margin-top: 10px;height: 38px; width: 38px;"/>
-                    <h3>+33619530144</h3>
+                    <h3>+63 962 573 9634</h3>
                 </div>
                 <div class="skill-item" style="padding-bottom: 25px;">
                     <img src="images/fb.png" alt="Facebook Icon" class="skill-icon"  style="margin-right:15px; margin-left: 25px; margin-top: 10px;height: 35px; width: 35px;"/>
@@ -700,11 +245,11 @@ Cebu, Philippines.
               
                 <div class="skill-item">
                     <img src="images/linkedin-basic-round-social-logo-png-13.png" alt="LinkedIn Icon" class="skill-icon" style="height: 35px; width: 35px;margin-left: 30px;" />
-                    <a href="https://www.linkedin.com/in/jhoevan-miles-arnoco-86955331"><h3 style="margin-left: 5px; margin-top: -1px;">LinkedIn</h3></a>
+                    <a href="https://www.linkedin.com/in/jhoevan-miles-arnoco-869553319/"><h3 style="margin-left: 5px; margin-top: -1px;">LinkedIn</h3></a>
                 </div>
                 <div class="skill-item">
                     <img src="images/onlinejobs.png" alt="OnlineJobsPH Icon" class="skill-icon " style="height: 35px; width: 35px;"/>
-                    <a href="https://www.onlinejobs.ph/jobseekers/info/32819991"><h3 style="margin-top: -1px;">OnlineJobsPH</h3></a>
+                    <a href="https://www.onlinejobs.ph/jobseekers/info/3281999"><h3 style="margin-top: -1px;">OnlineJobsPH</h3></a>
                 </div>
                 <div class="skill-item">
                     <img src="images/reddit.webp" alt="Reddit Icon" class="skill-icon" style="height: 35px; width: 35px; margin-left: 30px;"/>
