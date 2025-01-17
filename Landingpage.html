@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhoevan Miles Arnoco</title>
+    <link rel="icon" type="image/png" href="images/depositphotos_335935864-stock-illustration-creative-letter-jm-logo-design.jpg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <style>
+        body {
+            font-family: "Monument Extended";
+            margin: 0;
+            padding: 0;
+            background-color: #0b162c;
+            color: #333;
+        }
+        @keyframes slideInRight {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+body {
+    animation: slideInRight 1s ease-out;
+}
+
+        html{
+    scroll-behavior: smooth;
+}
+        /* Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #0b162c;
+            position: sticky; /* Makes the navbar stick at the top */
+    top: 0; /* The navbar will stick to the top of the viewport */
+    z-index: 1000; /* Ensures the navbar stays above other elements */
+        }
+
+        .nav-left {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #FFEB58;
+            transition: transform 0.3s;
+        }
+
+        .nav-left:hover {
+            transform: translateY(-5px);
+        }
+        .nav-center {
+            display: flex;
+            gap: 15px;
+            margin-left: -35px;
+        }
+
+        .nav-center a {
+            text-decoration: none;
+            color: wheat;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-left: 30px;
+            transition: transform 0.3s;
+        }
+        .nav-center a:hover {
+            transform: translateY(-5px);
+        }
+        .nav-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-right img {
+            width: 34px;
+            height:34px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border-radius: 50px;
+        }
+        .nav-right img:hover {
+            transform: translateY(-5px);
+        }
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            padding-top: 150px;
+        }
+
+        .hero-text {
+            max-width: 50%;
+            margin-left: 50px;
+        }
+
+        .hero-text h1 {
+            font-size: 4.9em;
+            font-weight: bold;
+            color: #FFEB58;
+            margin: 0;
+            margin-left: -10px;
+        }
+
+        .hero-text h2 {
+            font-size: 1.7em;
+            color: wheat;
+            margin: 10px 0;
+
+        }
+
+        .hero-text p {
+            font-size: 1.4em;
+            color:wheat;
+            margin-top: 10px;
+        }
+
+        .resume-button {
+            background-color: #FFEB58;
+            color: black;
+            padding: 10px 40px;
+            border: none;
+            border-radius: 20px;
+            font-size: 0.9em;
+            cursor: pointer;
+            margin-top: 10px;
+        transition: transform 0.3s;
+        font-family: "Monument Extended";
+        }
+        .resume-button:hover {
+            transform: translateY(-5px);
+        }
+        .hero-image img {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border: 5px solid #FFEB58;
+            margin-right: 100px;
+            margin-top: -50px;
+            transition: transform 0.3s;
+        }
+         .hero-image img:hover {
+            transform: translateY(-5px);
+        }
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image::after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: 70px;
+            width: 30px;
+            height: 30px;
+            background-color: #FFEB58;
+            border-radius: 50%;
+        }
+
+        /* About Section */
+        #about {
+            padding: 50px;
+            background-color:#0b162c;
+            padding-top: 100px;
+        }
+
+        #about h2 {
+            font-size: 4.5em;
+            font-weight: bold;
+            color: wheat;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 1.2em;
+            line-height: 1.8em;
+            color:wheat;
+            margin-bottom: 30px;
+            margin-left: 50px;
+        }
+        #experience {
+            padding: 50px;
+            background-color:#0b162c;
+            padding-top: 100px;
+        }
+
+        #experience h2 {
+            font-size: 4.5em;
+            font-weight: bold;
+            color: wheat;
+            margin-bottom: 20px;
+        }
+
+        #experience p {
+            font-size: 1.2em;
+            line-height: 1.8em;
+            color:wheat;
+            margin-bottom: 30px;
+            margin-left: 50px;
+        }
+        #services  {
+            padding: 50px;
+            background-color:#0b162c;
+            padding-top: 100px;
+        }
+
+        #services  h2 {
+            font-size: 4.5em;
+            font-weight: bold;
+            color: wheat;
+            margin-bottom: 20px;
+        }
+
+        #services p {
+            font-size: 1.2em;
+            line-height: 1.8em;
+            color:wheat;
+            margin-bottom: 30px;
+            margin-left: 50px;
+        }
+        #contact {
+            padding: 50px;
+            background-color:#0b162c;
+            padding-top: 100px;
+        }
+
+        #contact h2 {
+            font-size: 4.5em;
+            font-weight: bold;
+            color: wheat;
+            margin-bottom: 20px;
+        }
+
+        #contact p {
+            font-size: 1.2em;
+            line-height: 1.8em;
+            color:wheat;
+            margin-bottom: 30px;
+            margin-left: 50px;
+        }
+
+        #skills {
+            padding: 50px;
+            background-color:#0b162c;
+            padding-top: 100px;
+        }
+
+        #skills h2 {
+            font-size: 4.5em;
+            font-weight: bold;
+            color: wheat;
+            margin-bottom: 20px;
+        }
+
+        #skills p {
+            font-size: 1.2em;
+            line-height: 1.8em;
+            color:wheat;
+            margin-bottom: 30px;
+            margin-left: 50px;
+        }
+
+        .timeline {
+            list-style: none;
+            margin-left: 50px;
+            padding: 0;
+            margin-top: 100px;
+        }
+
+        .timeline li {
+            margin-bottom: 20px;
+            position: relative;
+            color: wheat;
+            padding-left: 60px; /* Space for the image */
+            margin-top: 60px;
+            display: flex;
+            align-items: flex-start; /* Align text with the image */
+        }
+
+        .timeline li img {
+            width: 150px; /* Adjust size as needed */
+            height: 150px;
+            object-fit: cover;
+            margin-right: 50px; /* Space between the image and text */
+            border-radius: 50%; /* Optional: Circular images */
+            transition: transform 0.3s;
+        }
+        .timeline li, img:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline li::before {
+            display: none; /* Hide the bullet point */
+        }
+
+        .timeline li span {
+            font-weight: bold;
+            color: #FFEB58;
+            font-size: 1.4rem;
+        }
+        .skills-section {
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skills-section h1 {
+            text-align: center;
+            font-size: 2.9rem;
+            margin-bottom: 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            background-color: #162447;
+            padding: 10px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-item i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #00d9ff;
+        }
+
+        .skill-item h3 {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+            color: #FFEB58;
+        }
+        .contact-container {
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 1000px;
+  margin-left: 80px;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  transition: transform 0.3s;
+        }
+
+        .contact-container:hover {
+            transform: translateY(-5px);
+        }
+.contact-info {
+  background-color:#1b263b;
+  color: wheat;
+  padding: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.contact-info h2 {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin: 8px 0;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info p img {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.contact-info a {
+  color: wheat;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.contact-info a img {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  background-color:dimgray;
+  padding: 50px;
+  flex-grow: 1;
+  width: 500px;
+}
+
+.contact-form h2 {
+  margin-bottom: 10px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background-color: #FFEB58;
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 20px;
+  transition: transform 0.3s;
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-5px);
+        }
+        .skill-item{
+    display: flex;
+    align-items: center; /* Vertically center the text and image */
+    margin-bottom: 15px;
+}
+
+.skill-icon {
+    width: 30px; /* Set the icon/image size */
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 10px; /* Space between the image and the text */
+}
+
+a{
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html"><div class="nav-left" style="margin-left: 30px;">Jhoevan Miles Arnoco</div></a>
+        <div class="nav-center">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#services">Services</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-right">
+            <a href="https://www.reddit.com/user/milesvan3"><img src="images/reddit.webp" alt="Facebook Icon" style=" width: 36px;height:36px;"></a>
+            <a href="https://www.linkedin.com/in/jhoevan-miles-arnoco-86955331"><img src="images/linkedin-basic-round-social-logo-png-13.png" alt="Twitter Icon"style=" width: 35px;height:35px;"></a>
+            <a href="https://www.onlinejobs.ph/jobseekers/info/32819991"><img src="images/onlinejobs.png" alt="LinkedIn Icon"style=" width: 35px;height:35px;"></a>
+        </div>
+    </nav>
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h2>Hello, I’m Miles,</h2>
+            <h1>Virtual Assistant</h1>
+            <p>Based in the Philippines.</p>
+            <a href="https://drive.google.com/file/d/1Udo_Y3Xne0VsHYmTaTFDLvYsCGz6pw5J/view"><button class="resume-button">Check Resume</button></a>
+        </div>
+        <div class="hero-image">
+            <img src="images/van.jfif" alt="John Doe">
+        </div>
+    </section>
+    <section id="about">
+        <h2 style="margin-left: 50px; color: #FFEB58;">About.</h2>
+        <p>Passionate and adaptable professional with 1 year of experience in Data Entry skills. Known for embracing risks and<br> 
+            pursuing new opportunities to advance my career. Committed to accuracy, confidentiality, timeliness, and adaptability.<br> 
+            Dedicated to delivering high-quality work with honesty and integrity.</p>
+        <ul class="timeline">
+            <h2 style="margin-left: 50px; color: #FFEB58;font-size: 3.6em; ;">Education.</h2>
+            <li>
+                <img src="images/ctu.jpg" alt="Timeline Icon">
+                <div>
+                    <span>Cebu Technological University ( 2022 - Currently )</span>
+                    <br><br>
+                    ➮
+                     Is a state university in Cebu, Philippines, offering various courses in education, technology, and science.<br><br> 
+                     ➮
+ College University.<br><br>
+ ➮
+ Cebu, Philippines.
+                </div>
+            </li>
+            <li>
+                <img src="images/cityofbogo.jfif" alt="Timeline Icon">
+                <div>
+                    <span>City of Bogo Senior High School ( 2020 - 2022 )</span>
+                    <br><br>
+                    ➮
+City of Bogo Senior High School is a school in Cebu Province, Central Visayas, Davao Region.<br><br> 
+➮
+Upper Secondary Education.<br><br>
+➮
+Cebu, Philippines.
+                </div>
+            </li>
+            <li>
+                <img src="images/roosevelt.jfif" alt="Timeline Icon">
+                <div>
+                    <span>Tabogon Roosevelt High School ( 2016 - 2020 )</span>
+                    <br><br>
+                    ➮ is a premier educational institution that is committed to providing high-quality education to students in the community.<br><br> 
+                    ➮ Secondary Education.<br><br>
+                    ➮ Cebu, Philippines.
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section id="experience">
+        <h2 style="margin-left: 50px; color: #FFEB58;">Experience.</h2>
+        <p> With strong organizational skills, I am a detail-oriented team player capable of handling multiple projects simultaneously<br>  with a high degree of accuracy.</p>
+        <ul class="timeline">
+            <h2 style="margin-left: 50px; color: #FFEB58;font-size: 3.6em; ;">Work Experience.</h2>
+          
+            <li>
+                <img src="images/DNA_Distillery_Logo_2048x2048.png" alt="Timeline Icon" style="border-radius: 10px; margin-top: 70px; height: 100px; width: 230px;">
+                <div>
+                    <span>DNA Distillery Australia ( May 2024 - Oct 2024)</span>
+                    <br><br>
+                    ➮ Virtual Assistant
+                    <br><br>
+                    ➮ Entered and organized data for over 500 clients, ensuring accuracy and consistency across all<br> records to streamline
+                    communication processes and enhance client relationships.
+                    <br><br>
+                    ➮ Prioritized daily tasks based on urgency and importance, achieving a 98% on-time task completion rate.
+                    <br><br>
+                    ➮ Streamlined email communication process by creating email templates and automating responses, resulting <br>in a 30%
+                    increase in response rate from other businesses.
+                    <br><br>
+                    ➮ Reviewed and corrected over 500 data entries for accuracy, resulting in a 95% error-free database.
+                </div>
+            </li>
+            </li>
+        </ul>
+        <ul class="timeline">
+            <h2 style="margin-left: 50px; color: #FFEB58;font-size: 3.6em; ;">Leadership Experience.</h2>
+            <li>
+                <img src="images/cityofbogo.jfif" alt="Timeline Icon" style="margin-left: 30px;">
+                <div>
+                    <span>City of Bogo Senior High School TVL Strand ( Sep 2021 - Sep 2022)</span>
+                    <br><br>
+                    ➮ TVL ICT Leader for Computer Maintenance
+                    <br><br>
+                    ➮ Learns basic troubleshooting and parts for every Personal Computers.
+                    <br><br>
+                    ➮ Maintain and troubleshoot computer systems, ensuring smooth operation and minimal downtime.
+                </div>
+            </li>
+            </li>
+        </ul>
+    </section>
+    <section id="services">
+        <h2 style="margin-left: 50px; color: #FFEB58;">Services.</h2>
+        <p></p>
+        <div class="skills-section"style="margin-top: -50px;">
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-code"></i>
+                    <h3 style="margin-left: 30px;">Mail Delivery Service</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-palette"></i>
+                    <h3 style="margin-left: 20px;">Event Planning Service
+                    </h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-universal-access"></i>
+                    <h3>Project Coodination Service</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Data Entry Assistant Service</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-server"></i>
+                    <h3>Administrative Support Service</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-code-branch"></i>
+                    <h3 style="margin-left: 30px;">Programming Service</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Data Confidentiality Service</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-cloud"></i>
+                    <h3 style="margin-left: 5px;">Meeting Scheduling Service</h3>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <h2 style="margin-left: 50px; color: #FFEB58;">Skillset.</h2>
+        <p></p>
+        <div class="skills-section" style="margin-top: -50px;">
+            <div class="skills-grid">
+                <div class="skill-item" style="padding-bottom: 28px;">
+                    <img src="images/excel-logo-1-1536x1429.png" alt="Location Icon" class="skill-icon" style="margin-left: 25px; margin-top: 20px;margin-right:15px" />
+                    <h3> Microsoft Excel</h3>
+                </div>
+                <div class="skill-item">
+                    <img src="images/Word.png" alt="Instagram Icon" class="skill-icon" style="height: 33px; width: 33px;" />
+                    <h3 style="margin-top: -5px;">Microsoft Word</h3>
+                </div>
+                <div class="skill-item" style="padding-bottom: 25px;">
+                    <img src="images/powerpoint-5963677__480.webp" alt="Phone Icon" class="skill-icon" style="margin-left: 10px; margin-top: 10px; margin-right: 10px;"/>
+                    <h3>Microsoft PowerPoint</h3>
+                </div>
+                <div class="skill-item" style="padding-bottom: 25px;">
+                    <img src="images/66890-logo-google-suite-download-free-image.png" alt="Facebook Icon" class="skill-icon"  style="margin-right:15px; margin-left: 25px; margin-top: 10px;"/>
+                    <a href="https://www.facebook.com/jhoevan.arnoco"> <h3>Google Suite</h3></a>
+                </div>
+                <div class="skill-item">
+                    <img src="images/shopify-logo-png-shopify-logo-1500x1034.png" alt="Email Icon" class="skill-icon" style="height: 65px; width: 65px; margin-left: 10px; margin-right:15px"/>
+                    <h3 style="margin-left: -10px;">Shopify</h3>
+                </div>
+              
+                <div class="skill-item">
+                    <img src="images/1656733807canva-icon-png.png" alt="LinkedIn Icon" class="skill-icon" style="height: 34px; width: 35px;margin-left: 20px;margin-right: 20px;" />
+                  <h3 style="margin-top: -1px;">Canva</h3>
+                </div>
+                <div class="skill-item">
+                    <img src="images/zoom-meeting-logo-transparent-png-21.png" alt="OnlineJobsPH Icon" class="skill-icon"style="height: 40px; width: 65px;margin-right: 10px; margin-left: 1px;"/>
+                   <h3  style="margin-top: -1px;">Zoom</h3>
+                </div>
+                <div class="skill-item">
+                    <img src="images/pinterest-1-logo-png-transparent.png" alt="Reddit Icon" class="skill-icon" style="height: 40px; width: 40px; margin-left: 30px;"/>
+                   <h3  style="margin-top: -1px;">Pinterest</h3>
+                </div>
+                
+               
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2 style="margin-left: 50px; color: #FFEB58;">Contact and Social.</h2>
+        <p></p>
+        <div class="skills-section" style="margin-top: -50px;">
+            <div class="skills-grid">
+                <div class="skill-item" style="padding-bottom: 25px;">
+                    <img src="images/loc.png" alt="Location Icon" class="skill-icon" style="margin-left: 35px; margin-top: 10px;margin-right: -15px" />
+                    <h3> Cebu City, Philippines</h3>
+                </div>
+                <div class="skill-item">
+                    <img src="images/1658587303instagram-png.webp" alt="Instagram Icon" class="skill-icon" style="height: 40px; width: 40px;" />
+                    <a href="https://www.instagram.com/jhoevanmiles?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><h3 style="margin-top: -1px;">Instagram</h3></a>
+                </div>
+                <div class="skill-item" style="padding-bottom: 25px;">
+                    <img src="images/phone.png" alt="Phone Icon" class="skill-icon" style="margin-left: 20px; margin-top: 10px;height: 38px; width: 38px;"/>
+                    <h3>+33619530144</h3>
+                </div>
+                <div class="skill-item" style="padding-bottom: 25px;">
+                    <img src="images/fb.png" alt="Facebook Icon" class="skill-icon"  style="margin-right:15px; margin-left: 25px; margin-top: 10px;height: 35px; width: 35px;"/>
+                    <a href="https://www.facebook.com/jhoevan.arnoco"> <h3>Facebook</h3></a>
+                </div>
+                <div class="skill-item" style="padding-bottom: 25px;">
+                    <img src="images/logo-gmail-png-gmail-icon-download-png-and-vector-1.png" alt="Email Icon" class="skill-icon" style="margin-left: 30px;  margin-top: 10px;margin-right:15px; height: 35px; width: 35px;"/>
+                    <h3>jhoevan923@<br>gmail.com</h3>
+                </div>
+              
+                <div class="skill-item">
+                    <img src="images/linkedin-basic-round-social-logo-png-13.png" alt="LinkedIn Icon" class="skill-icon" style="height: 35px; width: 35px;margin-left: 30px;" />
+                    <a href="https://www.linkedin.com/in/jhoevan-miles-arnoco-86955331"><h3 style="margin-left: 5px; margin-top: -1px;">LinkedIn</h3></a>
+                </div>
+                <div class="skill-item">
+                    <img src="images/onlinejobs.png" alt="OnlineJobsPH Icon" class="skill-icon " style="height: 35px; width: 35px;"/>
+                    <a href="https://www.onlinejobs.ph/jobseekers/info/32819991"><h3 style="margin-top: -1px;">OnlineJobsPH</h3></a>
+                </div>
+                <div class="skill-item">
+                    <img src="images/reddit.webp" alt="Reddit Icon" class="skill-icon" style="height: 35px; width: 35px; margin-left: 30px;"/>
+                    <a href="https://www.reddit.com/user/milesvan3"><h3 style="margin-left: 5px; margin-top: -1px;">Reddit</h3></a>
+                </div>
+                
+               
+            </div>
+        </div>
+    </section>
+    <script>
+        window.addEventListener('load', () => {
+          // Check if there is a hash in the URL
+          const hash = window.location.hash;
+          if (hash) {
+            // Find the section based on the hash
+            const targetSection = document.querySelector(hash);
+            if (targetSection) {
+              // Scroll smoothly to the section
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      </script>
+      
+</body>
+</html>
