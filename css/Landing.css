@@ -457,3 +457,76 @@ margin-right: 10px; /* Space between the image and the text */
 a{
 text-decoration: none;
 }
+@media(max-width: 1440px){
+    .hamburger{
+        display: none;
+    }
+}
+@media(max-width: 1203px){
+    .hero-text{
+        margin-left: 70px;
+        font-size: 15px;
+    }
+    #about p{
+        margin-right: 200px;
+    }
+}
+
+@media(max-width: 1133px){
+    .hero-text{
+        margin-left: 70px;
+        font-size: 13px;
+    }
+    .hero-image img{
+        width: 260px;
+        height: 260px;
+    }
+}
+/* Hide the menu items and show the hamburger icon on smaller screens */
+@media(max-width: 1010px) {
+    .nav-center {
+        display: none;  /* Hide menu items */
+        flex-direction: column; /* Stack the menu items vertically */
+        width: 100%; /* Make the menu take full width */
+        background-color: #0b162c; /* Background color for the menu */
+        position: absolute; /* Position the menu over the page */
+        top: 60px; /* Position it below the navbar */
+        left: 0;
+        z-index: 999; /* Ensure it's on top */
+        padding: 20px;
+    }
+    
+    .nav-center a {
+        color: wheat;
+        margin: 15px 0; /* Space between the links */
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon */
+        cursor: pointer;
+        font-size: 2em;
+        color: #FFEB58;
+        z-index: 1001; /* Make sure it's above the navbar */
+    }
+
+    .hamburger.active + .nav-center {
+        display: flex; /* Show menu items when hamburger is active */
+    }
+
+    .nav-right {
+        display: none; /* Hide the left and right items on smaller screens */
+    }
+}
+
+@media(max-width: 768px){
+    .hero-image img{
+        margin-right: -8px;
+    }
+    .hero-image::after{
+        display: none;
+    }
+    .skills-section{
+        max-width: 800px;
+    }
+}
